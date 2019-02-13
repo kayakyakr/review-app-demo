@@ -1,14 +1,28 @@
 <h1>Review Apps Postmortem</h1>
-<h3>Why use review apps?</h3>
-<h5>Continuous Deployment</h5>
+<h3>Drawbacks</h3>
+<h5>Fragmented environment</h5>
 <ul>
-  <li>Nothing is ever "stuck" waiting for staging</li>
-  <li>Simplifies deploys immensely</li>
-  <li>Staging <em>almost always</em> matches production</li>
+  <li>Sometimes it's confusing for internal testers to know what features are active</li>
+  <li>Ex: If there's a bug fixed in one branch, but still present in another</li>
+  <li>Will probably always be difficult to get product owners to understand how to test w/ review apps</li>
 </ul>
-<h5>Isolated Testing</h5>
+<h5>Empty database</h5>
 <ul>
-  <li>New features can be tested in isolation</li>
-  <li>Long-running features can be demo'ed more quickly, gathering earlier feedback</li>
-  <li>Problemmatic branch code can't detract from current</li>
+  <li>Gives you a fresh start, but means you need to recreate all testing objects.</li>
+  <li>The proper way to load a DB is via a seed file.</li>
+  <li>Either the seed file needs to be large, or you need to recreate everything leading up to test case</li>
+  <li><em>Could</em> copy staging database over, but there are no fixed implementations</li>
+  <li>You also wind up with too much stale data.</li>
+  <li>Copying db would allow testing the migration path, though.</li>
+</ul>
+<h5>Client buy-in</h5>
+<ul>
+  <li>It's just another thing to convince clients to use to get most out of it</li>
+</ul>
+<h5>3rd party things</h5>
+<ul>
+  <li>Some 3rd parties want fixed URLS, makes it hard to do things like:</li>
+  <li>Oauth</li>
+  <li>Extensions</li>
+  <li>Etc</li>
 </ul>
