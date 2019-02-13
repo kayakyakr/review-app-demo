@@ -1,8 +1,14 @@
 <h1>Review Apps Postmortem</h1>
-<h3>A raw HTML reading</h3>
-<h5>Components</h5>
+<h3>Why use review apps?</h3>
+<h5>Continuous Deployment</h5>
 <ul>
-  <li>pipeline</li>
-  <li>app.json - tells heroku what to build</li>
-  <li>github PRs</li>
+  <li>Nothing is ever "stuck" waiting for staging</li>
+  <li>Simplifies deploys immensely</li>
+  <li>Staging <em>almost always</em> matches production</li>
+</ul>
+<h5>Isolated Testing</h5>
+<ul>
+  <li>New features can be tested in isolation</li>
+  <li>Long-running features can be demo'ed more quickly, gathering earlier feedback</li>
+  <li>Problemmatic branch code can't detract from current</li>
 </ul>
