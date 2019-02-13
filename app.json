@@ -1,0 +1,16 @@
+{
+  "name": "Review App Demo",
+  "description": "A postmotem",
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "Standard-1X"
+    }
+  },
+  "image": "heroku/ruby",
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ],
+}
