@@ -1,14 +1,13 @@
 <h1>Review Apps Postmortem</h1>
-<h3>Why use review apps?</h3>
-<h5>Continuous Deployment</h5>
+<h3>Some other thoughts</h3>
+<h5>Working Pivotal flow</h5>
 <ul>
-  <li>Nothing is ever "stuck" waiting for staging</li>
-  <li>Simplifies deploys immensely</li>
-  <li>Staging <em>almost always</em> matches production</li>
+  <li>Ticket is delivered when PR is created</li>
+  <li>PM (or client) uses Pivotal's QA reviews to pass or fail ticket</li>
+  <li>When ticket is passed, developer merges to master (deploys to staging) and moves ticket above a line</li>
+  <li>Active clients can accept/reject from staging (rejections should be rare because of the reivew)</li>
+  <li>Production deploys can happen any time there are no unaccepted tickets above the line</li>
+  <li>Note: Detached clients make this flow hard. In GP, we had to mark everything as accepted ourselves after weekly demo/retro.</li>
 </ul>
-<h5>Isolated Testing</h5>
-<ul>
-  <li>New features can be tested in isolation</li>
-  <li>Long-running features can be demo'ed more quickly, gathering earlier feedback</li>
-  <li>Problemmatic branch code can't detract from current</li>
-</ul>
+<h5>Would I use it again?</h5>
+<h2>YES</h2>
